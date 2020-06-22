@@ -1,3 +1,4 @@
+#input的aha用法
 data club1;
    input Idno Name $18.
       Team $ 25-30 Startwght Endwght;
@@ -6,3 +7,4 @@ data club1;
 049 Amelia Serrano     yellow 189 165
 ;
 run;
+
