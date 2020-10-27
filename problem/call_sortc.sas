@@ -1,5 +1,6 @@
 /*今天收到小leader的新需求，在ADSL里加上RACEMLTP变量，需要对RACE1-4先进行alphabetical 排序，然后把不为空的RACE1-4合并到RACEMLTP*/
-
+/*行内排序问题*/
+/*reference: http://www.360doc.com/content/15/0108/02/19760344_439138654.shtml */
 /*Method 1 call sortc*/
 data _null_;
    array x(8) $10
