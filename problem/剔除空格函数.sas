@@ -1,1 +1,1 @@
-
+compress(var);
