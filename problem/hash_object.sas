@@ -118,11 +118,15 @@
 
 data match_on_movie_titles(drop=rc);
 if 0 then set mydata.movies
-              mydata.actors; /* load variable properties into hash tables*/
+              mydata.actors; /* load variable properties into hash tables */
 if _n_=1 then do;
-declare hash hashactors (dataset:'mydata.actors'); /* declare the name hashactors for hash*/
-hashact
+declare hash hashactors (dataset:'mydata.actors'); /* declare the name hashactors for hash */
+hashactors.definekey ('Title');
+hashactors.definedata ('Actor_Leading','Actor_supporting'); /* define columns of data */
+hashactors.definedone (); /* complete hash table defintion */
 end;
+set mydata.movies;
+if hashactors.find(key:title)=0 then output; /* lookup TITLE in MOVIES table using HashActors object */
 run;
 
 
