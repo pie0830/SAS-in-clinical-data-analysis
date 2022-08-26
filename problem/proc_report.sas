@@ -42,6 +42,11 @@
 	run;
 
 
+*proc report add all variables;
+
+proc report data=dataset;
+define drugcode / style(column)=[tagattr='type:String'];
+run; *if do not add 'column XX', proc report defaultly add all variable;
 
 
 
